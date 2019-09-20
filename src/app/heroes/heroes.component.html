@@ -1,0 +1,26 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <!--ul表示无序列表 列表展示 -->
+  <li *ngFor="let hero of heroes"
+  [class.selected]="hero === selectedHero"
+  (cilck)="onSelect(hero)">
+  <span class="badge">{{hero.id}}</span>{{hero.name}}
+  </li>
+</ul>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+<!--
+<div *ngIf="selectedHero">
+
+
+  <h2>{{selectedHero.name | uppercase}} Details</h2><h3>{{nick}}</h3>
+
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)] = "selectedHero.name" placeholder="name" />
+    </label>
+  </div>
+</div>
+-->
